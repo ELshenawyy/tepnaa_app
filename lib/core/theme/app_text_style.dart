@@ -2,6 +2,19 @@ import 'package:flutter/material.dart';
 import 'app_colors.dart';
 
 abstract class AppTextStyles {
+  static const TextStyle headerTitle = TextStyle(
+    fontFamily: 'Inter',
+    fontSize: 20,
+    fontWeight: FontWeight.bold,
+    color: Colors.white,
+  );
+
+  static const TextStyle headerSubtitle = TextStyle(
+    fontFamily: 'Inter',
+    fontSize: 12,
+    fontWeight: FontWeight.w400,
+    color: Colors.white70,
+  );
   static const TextStyle heading = TextStyle(
     fontFamily: 'Inter',
     fontSize: 20,
@@ -80,7 +93,7 @@ abstract class AppTextStyles {
   static const TextStyle skipButton = TextStyle(
     fontFamily: 'Inter',
     fontSize: 13,
-    color: Colors.white,
+    color: AppColors.surface,
   );
 
   static const TextStyle onboardingTag = TextStyle(
@@ -93,7 +106,7 @@ abstract class AppTextStyles {
     fontFamily: 'Inter',
     fontSize: 28,
     fontWeight: FontWeight.w900,
-    color: Colors.white,
+    color: AppColors.surface,
     height: 1.3,
   );
 }

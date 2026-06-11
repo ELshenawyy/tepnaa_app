@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:login_screen/core/localization/translation_keys.dart';
 import 'package:login_screen/core/theme/app_text_style.dart';
+import 'package:login_screen/core/utils/app_validator.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_constants.dart';
 
@@ -77,13 +78,7 @@ class PhoneField extends StatelessWidget {
                     fontWeight: FontWeight.w700,
                   ),
                 ),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return TKeys.phoneRequired.tr();
-                  }
-                  if (value.length < 9) return TKeys.phoneInvalid.tr();
-                  return null;
-                },
+                validator: AppValidators.phone,
               ),
             ),
             const SizedBox(width: 8),

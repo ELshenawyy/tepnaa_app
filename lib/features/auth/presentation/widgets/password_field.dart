@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:login_screen/core/localization/translation_keys.dart';
 import 'package:login_screen/core/theme/app_text_style.dart';
+import 'package:login_screen/core/utils/app_validator.dart';
 
 class PasswordField extends StatefulWidget {
   final TextEditingController controller;
@@ -57,11 +58,7 @@ class _PasswordFieldState extends State<PasswordField> {
               borderSide: const BorderSide(color: Color(0xFF2E7D5B)),
             ),
           ),
-          validator: (value) {
-            if (value == null || value.isEmpty) return TKeys.passwordRequired.tr();
-            if (value.length < 6) return TKeys.passwordShort.tr();
-            return null;
-          },
+          validator: AppValidators.password,
         ),
       ],
     );

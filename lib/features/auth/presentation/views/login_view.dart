@@ -1,5 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:login_screen/core/localization/translation_keys.dart';
 import 'package:login_screen/features/auth/presentation/sections/login_form_section.dart';
 import 'package:login_screen/features/auth/presentation/sections/login_header_section.dart';
 import 'package:login_screen/features/auth/presentation/sections/register_form_section.dart';
@@ -8,79 +10,96 @@ import '../../../../core/theme/app_constants.dart';
 import '../cubit/login_cubit.dart';
 import '../cubit/login_state.dart';
 
-class LoginView extends StatefulWidget {
+class LoginView extends StatelessWidget {
   const LoginView({super.key});
 
   @override
-  State<LoginView> createState() => _LoginViewState();
-}
-
-class _LoginViewState extends State<LoginView> {
-  int _currentIndex = 0;
-  final _pageController = PageController();
-
-  @override
-  void dispose() {
-    _pageController.dispose();
-    super.dispose();
-  }
-
-  void _goToPage(int index) {
-    _pageController.animateToPage(
-      index,
-      duration: const Duration(milliseconds: 300),
-      curve: Curves.easeInOut,
-    );
-    setState(() => _currentIndex = index);
-  }
-
-  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.background,
-      body: BlocListener<LoginCubit, LoginState>(
-        listener: (context, state) {
-          if (state is LoginFailure) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
-                content: Text(
-                  state.message,
-                  style: TextStyle(
-                    fontFamily: 'Inter',
+    return DefaultTabController(
+      length: 2,
+      child: Scaffold(
+        backgroundColor: AppColors.background,
+        body: BlocListener<LoginCubit, LoginState>(
+          listener: (context, state) {
+            if (state is LoginFailure) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text(
+                    state.message,
+                    style: const TextStyle(fontFamily: 'Inter'),
                   ),
+                  backgroundColor: AppColors.error,
                 ),
-                backgroundColor: AppColors.error,
-              ),
-            );
-          }
-          if (state is LoginSuccess) {
-            // TODO: navigate to home
-          }
-        },
-        child: Column(
-          children: [
-            LoginHeaderSection(
-                onLoginTap: () => _goToPage(0),
-                onRegisterTap: () => _goToPage(1),
-                currentIndex: _currentIndex),
-            const SizedBox(
-              height: 24 + AppConstants.spacingLarge,
-            ),
-            Expanded(
-              child: PageView(
-                controller: _pageController,
-                onPageChanged: (i) => setState(
-                  () {
-                    _currentIndex = i;
-                  },
-                ),
+              );
+            }
+            if (state is LoginSuccess) {
+              // TODO: context.go(RouteNames.home)
+            }
+          },
+          child: Column(
+            children: [
+              // ── Header + TabBar ───────────────
+              Stack(
+                clipBehavior: Clip.none,
                 children: [
-                  LoginFormSection(onRegisterTap: () => _goToPage(1)),
-                  const RegisterFormSection(),
+                  const LoginHeaderSection(),
+                  Positioned(
+                    bottom: -25,
+                    left: AppConstants.paddingH,
+                    right: AppConstants.paddingH,
+                    child: Container(
+                      padding: const EdgeInsets.all(4),
+                      decoration: BoxDecoration(
+                        color: AppColors.surface,
+                        border: Border.all(color: AppColors.border),
+                        borderRadius: BorderRadius.circular(
+                          AppConstants.borderRadius,
+                        ),
+                      ),
+                      child: TabBar(
+                        indicator: BoxDecoration(
+                          color: AppColors.primary,
+                          borderRadius: BorderRadius.circular(
+                            AppConstants.borderRadius - 2,
+                          ),
+                        ),
+                        indicatorSize: TabBarIndicatorSize.tab,
+                        dividerColor: Colors.transparent,
+                        labelStyle: const TextStyle(
+                          fontFamily: 'Inter',
+                          fontWeight: FontWeight.w700,
+                          fontSize: 14,
+                        ),
+                        unselectedLabelStyle: const TextStyle(
+                          fontFamily: 'Inter',
+                          fontWeight: FontWeight.w400,
+                          fontSize: 14,
+                        ),
+                        labelColor: AppColors.surface,
+                        unselectedLabelColor: AppColors.textSecondary,
+                        tabs: [
+                          Tab(text: TKeys.loginTitle.tr()),
+                          Tab(text: TKeys.newRegister.tr()),
+                        ],
+                      ),
+                    ),
+                  ),
                 ],
               ),
-            ),
-          ],
+
+              const SizedBox(height: 24 + AppConstants.spacingLarge),
+
+              // ── TabBarView ────────────────────
+              const Expanded(
+                child: TabBarView(
+                  children: [
+                    LoginFormSection(),
+                    RegisterFormSection(),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

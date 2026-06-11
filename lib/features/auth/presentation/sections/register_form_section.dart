@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:login_screen/core/localization/translation_keys.dart';
 import 'package:login_screen/core/theme/app_constants.dart';
+import 'package:login_screen/core/utils/app_validator.dart';
 import 'package:login_screen/core/widgets/app_button.dart';
 import 'package:login_screen/features/auth/presentation/widgets/custom_dropdown.dart';
 import 'package:login_screen/features/auth/presentation/widgets/custom_text_field.dart';
@@ -63,16 +64,8 @@ class _RegisterFormSectionState extends State<RegisterFormSection> {
               prefexIcon: Icons.email_outlined,
               isRequired: true,
               keyboardType: TextInputType.emailAddress,
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return TKeys.emailRequired.tr();
-                }
-                if (!RegExp(r'^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$')
-                    .hasMatch(value)) {
-                  return TKeys.emailInvalid.tr();
-                }
-                return null;
-              },
+              validator: AppValidators.email,
+            
             ),
             const SizedBox(height: AppConstants.spacing),
 

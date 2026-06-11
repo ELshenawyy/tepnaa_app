@@ -1,12 +1,11 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
 import 'package:login_screen/core/localization/translation_keys.dart';
-import 'package:login_screen/core/router/route_names.dart';
 import 'package:login_screen/core/theme/app_colors.dart';
 import 'package:login_screen/core/theme/app_constants.dart';
 import 'package:login_screen/core/theme/app_text_style.dart';
+import 'package:login_screen/core/utils/app_validator.dart';
 import 'package:login_screen/core/widgets/app_button.dart';
 import 'package:login_screen/features/auth/presentation/cubit/login_cubit.dart';
 import 'package:login_screen/features/auth/presentation/cubit/login_state.dart';
@@ -14,9 +13,7 @@ import 'package:login_screen/features/auth/presentation/widgets/custom_text_fiel
 import 'package:login_screen/features/auth/presentation/widgets/password_field.dart';
 
 class LoginFormSection extends StatefulWidget {
-  final VoidCallback onRegisterTap;
-
-  const LoginFormSection({super.key, required this.onRegisterTap});
+  const LoginFormSection({super.key});
 
   @override
   State<LoginFormSection> createState() => _LoginFormSectionState();
@@ -94,16 +91,7 @@ class _LoginFormSectionState extends State<LoginFormSection> {
                   prefexIcon: Icons.email_outlined,
                   isRequired: true,
                   keyboardType: TextInputType.emailAddress,
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return TKeys.emailRequired.tr();
-                    }
-                    if (!RegExp(r'^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$')
-                        .hasMatch(value)) {
-                      return TKeys.emailInvalid.tr();
-                    }
-                    return null;
-                  },
+                  validator: AppValidators.email,
                 ),
                 const SizedBox(height: AppConstants.spacing),
 
@@ -177,7 +165,7 @@ class _LoginFormSectionState extends State<LoginFormSection> {
                   label: TKeys.newRegister.tr(),
                   icon: Icons.arrow_forward_outlined,
                   onPressed: () {
-                    context.go(RouteNames.register);
+                    DefaultTabController.of(context).animateTo(1);
                   },
                 ),
                 const SizedBox(height: AppConstants.spacingLarge),
