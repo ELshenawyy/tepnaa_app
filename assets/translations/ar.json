@@ -1,0 +1,54 @@
+{
+  "auth": {
+    "loginTitle": "تسجيل الدخول",
+    "loginSubtitle": "أدخل بيانات حسابك للمتابعة",
+    "email": "البريد الإلكتروني",
+    "emailHint": "example@email.com",
+    "password": "كلمة المرور",
+    "forgotPassword": "نسيت كلمة المرور؟",
+    "loginButton": "تسجيل الدخول",
+    "registerButton": "إنشاء حساب مقدم خدمة",
+    "newRegister": "تسجيل جديد",
+    "or": "أو"
+  },
+  "register": {
+    "facilityName": "اسم المنشأة / المركز الطبي",
+    "facilityHint": "مثال: مركز الأمل الطبي",
+    "facilityType": "نوع المنشأة",
+    "country": "الدولة",
+    "city": "المدينة",
+    "phone": "رقم الهاتف",
+    "license": "الترخيص المهني",
+    "certificates": "شهادات إضافية",
+    "submit": "إرسال طلب التسجيل",
+    "terms": "أوافق على شروط الاستخدام وسياسة الخصوصية"
+  },
+  "intro": {
+    "welcomeTagline": "رحلتك الطبية تبدأ هنا",
+    "loading": "جارٍ التحميل...",
+    "selectLanguage": "اختر لغتك",
+    "selectLanguageSub": "يمكنك تغييرها في أي وقت من الإعدادات",
+    "continue": "متابعة",
+    "skip": "تخطي",
+    "next": "التالي",
+    "startNow": "ابدأ رحلتك الآن",
+    "arabic": "العربية",
+    "english": "English"
+  },
+  "onboarding": {
+    "slide1Tag": "أكثر من 1,500 مستشفى",
+    "slide1Title": "أفضل المستشفيات\nحول العالم",
+    "slide1Desc": "نوفر لك وصولاً لأكثر من 1,500 مستشفى معتمد في 30 دولة، مع ضمان أعلى معايير الجودة والسلامة.",
+    "slide2Tag": "خدمات متكاملة",
+    "slide2Title": "رحلة طبية متكاملة\nمن الألف للياء",
+    "slide2Desc": "نتولى كل التفاصيل: التأشيرة، الإقامة، النقل، البرنامج، والمتابعة الطبية."
+  },
+  "errors": {
+    "emailRequired": "البريد الإلكتروني مطلوب",
+    "emailInvalid": "البريد الإلكتروني غير صحيح",
+    "passwordRequired": "كلمة المرور مطلوبة",
+    "passwordShort": "كلمة المرور قصيرة جداً",
+    "phoneRequired": "رقم الهاتف مطلوب",
+    "phoneInvalid": "رقم الهاتف غير صحيح"
+  }
+}

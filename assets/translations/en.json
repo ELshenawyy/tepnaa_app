@@ -1,0 +1,54 @@
+{
+  "auth": {
+    "loginTitle": "Login",
+    "loginSubtitle": "Enter your account details to continue",
+    "email": "Email",
+    "emailHint": "example@email.com",
+    "password": "Password",
+    "forgotPassword": "Forgot password?",
+    "loginButton": "Login",
+    "registerButton": "Create Service Provider Account",
+    "newRegister": "New Register",
+    "or": "Or"
+  },
+  "register": {
+    "facilityName": "Facility / Medical Center Name",
+    "facilityHint": "Example: Hope Medical Center",
+    "facilityType": "Facility Type",
+    "country": "Country",
+    "city": "City",
+    "phone": "Phone Number",
+    "license": "Professional License",
+    "certificates": "Additional Certificates",
+    "submit": "Submit Registration Request",
+    "terms": "I agree to the Terms of Use and Privacy Policy"
+  },
+  "intro": {
+    "welcomeTagline": "Your medical journey starts here",
+    "loading": "Loading...",
+    "selectLanguage": "Choose your language",
+    "selectLanguageSub": "You can change it anytime from settings",
+    "continue": "Continue",
+    "skip": "Skip",
+    "next": "Next",
+    "startNow": "Start your journey now",
+    "arabic": "العربية",
+    "english": "English"
+  },
+  "onboarding": {
+    "slide1Tag": "Over 1,500 hospitals",
+    "slide1Title": "Best Hospitals\nAround the World",
+    "slide1Desc": "We provide access to over 1,500 accredited hospitals in 30 countries, ensuring the highest quality and safety standards.",
+    "slide2Tag": "Complete services",
+    "slide2Title": "Complete Medical Journey\nFrom A to Z",
+    "slide2Desc": "We handle all details: visa, accommodation, transportation, program, and medical follow-up."
+  },
+  "errors": {
+    "emailRequired": "Email is required",
+    "emailInvalid": "Invalid email address",
+    "passwordRequired": "Password is required",
+    "passwordShort": "Password is too short",
+    "phoneRequired": "Phone number is required",
+    "phoneInvalid": "Invalid phone number"
+  }
+}
