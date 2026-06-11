@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:login_screen/core/localization/translation_keys.dart';
 import 'package:login_screen/core/theme/app_colors.dart';
 import 'package:login_screen/core/theme/app_text_style.dart';
+import 'package:login_screen/core/widgets/app_button.dart';
 
 class OnboardingPage extends StatelessWidget {
   final String imagePath;
@@ -89,10 +90,7 @@ class OnboardingPage extends StatelessWidget {
                   ),
                   child: Text(
                     TKeys.skip.tr(),
-                    style: TextStyle(fontFamily: 'Inter',
-                      fontSize: 13,
-                      color: Colors.white,
-                    ),
+                    style: AppTextStyles.skipButton,
                   ),
                 ),
               ),
@@ -108,7 +106,7 @@ class OnboardingPage extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.fromLTRB(20, 0, 20, 32),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start, 
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // ── Tag ───────────────────────────
                 Container(
@@ -134,10 +132,7 @@ class OnboardingPage extends StatelessWidget {
                       const SizedBox(width: 6),
                       Text(
                         tag,
-                        style: TextStyle(fontFamily: 'Inter',
-                          fontSize: 12,
-                          color: const Color(0xB3FFFFFF),
-                        ),
+                        style: AppTextStyles.onboardingTag,
                       ),
                     ],
                   ),
@@ -147,47 +142,24 @@ class OnboardingPage extends StatelessWidget {
                 // ── Title ─────────────────────────
                 Text(
                   title,
-                  textAlign: TextAlign.start, 
-                  style: TextStyle(fontFamily: 'Inter',
-                    fontSize: 28,
-                    fontWeight: FontWeight.w900,
-                    color: AppColors.surface,
-                    height: 1.3,
-                  ),
+                  textAlign: TextAlign.start,
+                  style: AppTextStyles.onboardingTitle,
                 ),
                 const SizedBox(height: 8),
 
                 // ── Description ───────────────────
                 Text(
                   description,
-                  textAlign: TextAlign.start, 
+                  textAlign: TextAlign.start,
                   style: AppTextStyles.hint,
                 ),
                 const SizedBox(height: 24),
 
                 // ── Button ────────────────────────
-                GestureDetector(
-                  onTap: onButtonTap,
-                  child: Container(
-                    width: double.infinity,
-                    padding: const EdgeInsets.symmetric(vertical: 14),
-                    decoration: BoxDecoration(
-                      color: AppColors.primary,
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(buttonText, style: AppTextStyles.button),
-                        const SizedBox(width: 6),
-                        const Icon(
-                          Icons.arrow_forward_rounded,
-                          color: Colors.white,
-                          size: 18,
-                        ),
-                      ],
-                    ),
-                  ),
+                AppButton(
+                  label: buttonText,
+                  icon: Icons.arrow_forward_outlined,
+                  onPressed: onButtonTap,
                 ),
               ],
             ),

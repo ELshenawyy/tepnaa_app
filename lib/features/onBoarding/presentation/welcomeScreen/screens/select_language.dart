@@ -4,10 +4,10 @@ import 'package:go_router/go_router.dart';
 import 'package:login_screen/core/localization/app_locate.dart';
 import 'package:login_screen/core/localization/translation_keys.dart';
 import 'package:login_screen/core/router/route_names.dart';
+import 'package:login_screen/core/widgets/app_button.dart';
 import 'package:login_screen/features/onBoarding/presentation/widgets/language_opthions.dart';
 import '../../../../../core/theme/app_colors.dart';
 import '../../../../../core/theme/app_constants.dart';
-import '../../../../../core/theme/app_text_style.dart';
 
 class LanguageScreen extends StatefulWidget {
   const LanguageScreen({super.key});
@@ -49,7 +49,8 @@ class _LanguageScreenState extends State<LanguageScreen> {
                 // ── Title ─────────────────────────
                 Text(
                   TKeys.selectLanguage.tr(),
-                  style: TextStyle(fontFamily: 'Inter',
+                  style: TextStyle(
+                    fontFamily: 'Inter',
                     fontSize: 24,
                     fontWeight: FontWeight.w800,
                     color: AppColors.primary,
@@ -60,7 +61,8 @@ class _LanguageScreenState extends State<LanguageScreen> {
                 // ── Subtitle ──────────────────────
                 Text(
                   TKeys.selectLanguageSub.tr(),
-                  style: TextStyle(fontFamily: 'Inter',
+                  style: TextStyle(
+                    fontFamily: 'Inter',
                     fontSize: 13,
                     color: AppColors.textSecondary,
                   ),
@@ -99,30 +101,15 @@ class _LanguageScreenState extends State<LanguageScreen> {
             child: SizedBox(
               width: double.infinity,
               height: AppConstants.buttonHeight,
-              child: ElevatedButton.icon(
+              child: AppButton(
+                label: TKeys.continueBtn.tr(),
+                icon: Icons.arrow_forward_outlined,
                 onPressed: () {
-                  // ── Step 9 — تغيير اللغة ────────
                   context.setLocale(
                     _selected == 'ar' ? AppLocale.ar : AppLocale.en,
                   );
-
-                  // ── Navigate ──────────────────────
                   context.go(RouteNames.onBoarding);
-                  
                 },
-                icon: const Icon(
-                  Icons.arrow_forward_rounded,
-                  color: Colors.white,
-                  size: 20,
-                ),
-                label: Text(TKeys.continueBtn.tr(), style: AppTextStyles.button),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: AppColors.primary,
-                  shape: RoundedRectangleBorder(
-                    borderRadius:
-                        BorderRadius.circular(AppConstants.borderRadius),
-                  ),
-                ),
               ),
             ),
           ),

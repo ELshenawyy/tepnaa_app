@@ -5,6 +5,8 @@ import 'package:login_screen/core/localization/translation_keys.dart';
 import 'package:login_screen/core/router/route_names.dart';
 import 'package:login_screen/core/theme/app_colors.dart';
 import 'package:login_screen/core/theme/app_constants.dart';
+import 'package:login_screen/core/theme/app_images.dart';
+import 'package:login_screen/core/theme/app_text_style.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});
@@ -23,7 +25,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   Future<void> _navigate() async {
     await Future.delayed(const Duration(seconds: 2));
     if (!mounted) return;
-    
+
     context.go(RouteNames.language);
   }
 
@@ -38,7 +40,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           // ── Logo ──────────────────────────────
           Center(
             child: Image.asset(
-              'assets/images/tibna_logo.png',
+              AppImages.tibnaLogo,
               height: AppConstants.wElcomelogoHeight,
               width: AppConstants.welcomelogoWeight,
               fit: BoxFit.contain,
@@ -54,11 +56,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               children: [
                 Text(
                   TKeys.welcomeTagline.tr(),
-                  style: TextStyle(fontFamily: 'Inter',
-                    color: const Color(0xFF5A7A72),
-                    fontWeight: FontWeight.w400,
-                    fontSize: 14,
-                  ),
+                  style: AppTextStyles.tagline,
                 ),
                 const SizedBox(height: 4),
 
@@ -73,14 +71,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 ),
                 const SizedBox(height: 12),
 
-                Text(
-                  TKeys.loading.tr(),
-                  style: TextStyle(fontFamily: 'Inter',
-                    fontSize: 12,
-                    fontWeight: FontWeight.w400,
-                    color: const Color(0xFFA0B5B0),
-                  ),
-                ),
+                Text(TKeys.loading.tr(), style: AppTextStyles.loading),
               ],
             ),
           ),

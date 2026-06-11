@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:login_screen/core/localization/translation_keys.dart';
 import 'package:login_screen/core/router/route_names.dart';
+import 'package:login_screen/core/theme/app_images.dart';
 import 'package:login_screen/features/onBoarding/presentation/onBoarding/widgets/onBoardingPage.dart';
 
 class OnboardingScreen extends StatefulWidget {
@@ -35,7 +36,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   List<Map<String, dynamic>> get _slides => [
         {
-          'imagePath': 'assets/images/hospital.png',
+          'imagePath': AppImages.hospital,
           'tag': TKeys.slide1Tag.tr(),
           'title': TKeys.slide1Title.tr(),
           'description': TKeys.slide1Desc.tr(),
@@ -43,7 +44,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           'isLast': false,
         },
         {
-          'imagePath': 'assets/images/travel.png',
+          'imagePath': AppImages.tibnaLogo,
           'tag': TKeys.slide2Tag.tr(),
           'title': TKeys.slide2Title.tr(),
           'description': TKeys.slide2Desc.tr(),

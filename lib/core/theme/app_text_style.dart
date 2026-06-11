@@ -23,6 +23,14 @@ abstract class AppTextStyles {
     color: AppColors.textPrimary,
   );
 
+  static const TextStyle loginTitle = TextStyle(
+    fontFamily: 'Inter',
+    fontSize: 28,
+    fontWeight: FontWeight.w900,
+    color: Colors.white,
+    height: 1.3,
+  );
+
   static const TextStyle button = TextStyle(
     fontFamily: 'Inter',
     fontSize: 15,
@@ -56,5 +64,36 @@ abstract class AppTextStyles {
     fontSize: 14,
     fontWeight: FontWeight.w600,
     color: AppColors.textPrimary,
+  );
+  static final TextStyle tagline = TextStyle(
+    fontFamily: 'inter',
+    fontSize: 14,
+    fontWeight: FontWeight.w400,
+    color: AppColors.tagline,
+  );
+
+  static final TextStyle loading = TextStyle(
+    fontSize: 12,
+    fontWeight: FontWeight.w400,
+    color: AppColors.loading,
+  );
+  static const TextStyle skipButton = TextStyle(
+    fontFamily: 'Inter',
+    fontSize: 13,
+    color: Colors.white,
+  );
+
+  static const TextStyle onboardingTag = TextStyle(
+    fontFamily: 'Inter',
+    fontSize: 12,
+    color: Color(0xB3FFFFFF),
+  );
+
+  static const TextStyle onboardingTitle = TextStyle(
+    fontFamily: 'Inter',
+    fontSize: 28,
+    fontWeight: FontWeight.w900,
+    color: Colors.white,
+    height: 1.3,
   );
 }
