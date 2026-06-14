@@ -4,10 +4,12 @@ import 'package:go_router/go_router.dart';
 import 'package:login_screen/core/localization/app_locate.dart';
 import 'package:login_screen/core/localization/translation_keys.dart';
 import 'package:login_screen/core/router/route_names.dart';
+import 'package:login_screen/core/theme/app_images.dart';
+import 'package:login_screen/core/theme/app_text_style.dart';
 import 'package:login_screen/core/widgets/app_button.dart';
-import 'package:login_screen/features/onBoarding/presentation/widgets/language_opthions.dart';
-import '../../../../../core/theme/app_colors.dart';
-import '../../../../../core/theme/app_constants.dart';
+import 'package:login_screen/features/intro/presentation/widgets/language_opthions.dart';
+import '../../../../core/theme/app_colors.dart';
+import '../../../../core/theme/app_constants.dart';
 
 class LanguageScreen extends StatefulWidget {
   const LanguageScreen({super.key});
@@ -29,7 +31,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
           Padding(
             padding: const EdgeInsets.only(top: 60, bottom: 24),
             child: Image.asset(
-              'assets/images/tibna_logo.png',
+              AppImages.tibnaLogo,
               height: AppConstants.wElcomelogoHeight,
               width: AppConstants.welcomelogoWeight,
               fit: BoxFit.contain,
@@ -49,23 +51,14 @@ class _LanguageScreenState extends State<LanguageScreen> {
                 // ── Title ─────────────────────────
                 Text(
                   TKeys.selectLanguage.tr(),
-                  style: TextStyle(
-                    fontFamily: 'Inter',
-                    fontSize: 24,
-                    fontWeight: FontWeight.w800,
-                    color: AppColors.primary,
-                  ),
+                  style: AppTextStyles.selsectlangTitle,
                 ),
                 const SizedBox(height: 2),
 
                 // ── Subtitle ──────────────────────
                 Text(
                   TKeys.selectLanguageSub.tr(),
-                  style: TextStyle(
-                    fontFamily: 'Inter',
-                    fontSize: 13,
-                    color: AppColors.textSecondary,
-                  ),
+                  style: AppTextStyles.subheading,
                 ),
                 const SizedBox(height: 32),
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login_screen/core/theme/app_text_style.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_constants.dart';
 
@@ -70,19 +71,11 @@ class LanguageOption extends StatelessWidget {
               children: [
                 Text(
                   name,
-                  style: TextStyle(fontFamily: 'Inter',
-                    fontSize: 16,
-                    fontWeight: FontWeight.w700,
-                    color: AppColors.textPrimary,
-                  ),
+                  style: AppTextStyles.languageName,
                 ),
                 Text(
                   subName,
-                  style: TextStyle(fontFamily: 'Inter',
-                    fontSize: 12,
-                    color: AppColors.textSecondary,
-                    fontWeight: FontWeight.w400,
-                  ),
+                  style: AppTextStyles.languageSubName,
                 ),
               ],
             ),

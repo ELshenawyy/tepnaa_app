@@ -109,4 +109,24 @@ abstract class AppTextStyles {
     color: AppColors.surface,
     height: 1.3,
   );
+
+  static const TextStyle selsectlangTitle = TextStyle(
+    fontFamily: 'Inter',
+    fontSize: 24,
+    fontWeight: FontWeight.w800,
+    color: AppColors.primary,
+  );
+  static const TextStyle languageName = TextStyle(
+  fontFamily: 'Inter',
+  fontSize: 16,
+  fontWeight: FontWeight.w700,
+  color: AppColors.textPrimary,
+);
+
+static const TextStyle languageSubName = TextStyle(
+  fontFamily: 'Inter',
+  fontSize: 12,
+  fontWeight: FontWeight.w400,
+  color: AppColors.textSecondary,
+);
 }
