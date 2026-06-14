@@ -1,6 +1,7 @@
 import 'package:get_it/get_it.dart';
 import 'package:login_screen/features/auth/data/repo/auth_repository_impl.dart';
 import 'package:login_screen/features/auth/domain/repo/auth_repository.dart';
+import 'package:login_screen/features/intro/presentation/cubit/splash_cubit.dart';
 import '../../features/auth/data/datasources/auth_remote_datasource.dart';
 import '../../features/auth/domain/usecases/sign_in_usecase.dart';
 import '../../features/auth/presentation/cubit/login_cubit.dart';
@@ -31,4 +32,5 @@ void setupDependencies() {
   sl.registerFactory(
     () => LoginCubit(signInUseCase: sl()),
   );
+  sl.registerFactory(() => SplashCubit());
 }

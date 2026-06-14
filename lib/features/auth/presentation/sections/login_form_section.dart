@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:login_screen/core/localization/translation_keys.dart';
 import 'package:login_screen/core/theme/app_colors.dart';
 import 'package:login_screen/core/theme/app_constants.dart';
+import 'package:login_screen/core/theme/app_icons.dart';
 import 'package:login_screen/core/theme/app_text_style.dart';
 import 'package:login_screen/core/utils/app_validator.dart';
 import 'package:login_screen/core/widgets/app_button.dart';
@@ -74,7 +75,8 @@ class _LoginFormSectionState extends State<LoginFormSection> {
                 // ── Title ─────────────────────────
                 Text(
                   TKeys.loginTitle.tr(),
-                  style: AppTextStyles.loginTitle,
+                  style: AppTextStyles.loginTitle
+                      .copyWith(color: AppColors.textPrimary),
                 ),
                 const SizedBox(height: 4),
                 Text(
@@ -132,7 +134,7 @@ class _LoginFormSectionState extends State<LoginFormSection> {
                       )
                     : AppButton(
                         label: TKeys.loginTitle.tr(),
-                        icon: Icons.arrow_back_rounded,
+                        icon: Icons.arrow_forward_outlined,
                         onPressed: _submit,
                       ),
 
@@ -163,7 +165,9 @@ class _LoginFormSectionState extends State<LoginFormSection> {
                 // ── Register Button ───────────────
                 AppButton(
                   label: TKeys.newRegister.tr(),
-                  icon: Icons.arrow_forward_outlined,
+                  type: AppButtonType.outlined,
+                  svgAssetPath: AppIcons.registerIcon,
+                  iconPosition: IconPosition.start,
                   onPressed: () {
                     DefaultTabController.of(context).animateTo(1);
                   },

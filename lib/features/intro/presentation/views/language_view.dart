@@ -11,14 +11,14 @@ import 'package:login_screen/features/intro/presentation/widgets/language_opthio
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_constants.dart';
 
-class LanguageScreen extends StatefulWidget {
-  const LanguageScreen({super.key});
+class LanguageView extends StatefulWidget {
+  const LanguageView({super.key});
 
   @override
-  State<LanguageScreen> createState() => _LanguageScreenState();
+  State<LanguageView> createState() => _LanguageViewState();
 }
 
-class _LanguageScreenState extends State<LanguageScreen> {
+class _LanguageViewState extends State<LanguageView> {
   String _selected = 'ar';
 
   @override
@@ -97,6 +97,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
               child: AppButton(
                 label: TKeys.continueBtn.tr(),
                 icon: Icons.arrow_forward_outlined,
+                iconPosition: IconPosition.start,
                 onPressed: () {
                   context.setLocale(
                     _selected == 'ar' ? AppLocale.ar : AppLocale.en,

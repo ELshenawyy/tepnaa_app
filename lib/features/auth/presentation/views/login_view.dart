@@ -44,7 +44,7 @@ class LoginView extends StatelessWidget {
                 children: [
                   const LoginHeaderSection(),
                   Positioned(
-                    bottom: -25,
+                    bottom: -30,
                     left: AppConstants.paddingH,
                     right: AppConstants.paddingH,
                     child: Container(

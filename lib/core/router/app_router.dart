@@ -11,15 +11,15 @@ final appRouter = GoRouter(
   routes: [
     GoRoute(
       path: RouteNames.splash,
-      builder: (context, state) => WelcomeScreen(),
+      builder: (context, state) => WelcomeView(),
     ),
     GoRoute(
       path: RouteNames.language,
-      builder: (context, state) => LanguageScreen(),
+      builder: (context, state) => LanguageView(),
     ),
     GoRoute(
       path: RouteNames.onBoarding,
-      builder: (context, state) => OnboardingScreen(),
+      builder: (context, state) => OnboardingView(),
     ),
     GoRoute(
       path: RouteNames.login,
