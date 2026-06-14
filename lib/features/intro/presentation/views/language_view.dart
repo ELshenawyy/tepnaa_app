@@ -98,10 +98,10 @@ class _LanguageViewState extends State<LanguageView> {
                 label: TKeys.continueBtn.tr(),
                 icon: Icons.arrow_forward_outlined,
                 iconPosition: IconPosition.start,
-                onPressed: () {
-                  context.setLocale(
-                    _selected == 'ar' ? AppLocale.ar : AppLocale.en,
-                  );
+                onPressed: () async {
+                  await context.setLocale(
+                      _selected == 'ar' ? AppLocale.ar : AppLocale.en);
+                  if (!context.mounted) return;
                   context.go(RouteNames.onBoarding);
                 },
               ),
