@@ -117,16 +117,27 @@ abstract class AppTextStyles {
     color: AppColors.primary,
   );
   static const TextStyle languageName = TextStyle(
-  fontFamily: 'Inter',
-  fontSize: 16,
-  fontWeight: FontWeight.w700,
-  color: AppColors.textPrimary,
-);
+    fontFamily: 'Inter',
+    fontSize: 16,
+    fontWeight: FontWeight.w700,
+    color: AppColors.textPrimary,
+  );
 
-static const TextStyle languageSubName = TextStyle(
-  fontFamily: 'Inter',
-  fontSize: 12,
-  fontWeight: FontWeight.w400,
-  color: AppColors.textSecondary,
-);
+  static const TextStyle languageSubName = TextStyle(
+    fontFamily: 'Inter',
+    fontSize: 12,
+    fontWeight: FontWeight.w400,
+    color: AppColors.textSecondary,
+  );
+  static const TextStyle tabLabelActive = TextStyle(
+    fontFamily: 'Inter',
+    fontWeight: FontWeight.w700,
+    fontSize: 14,
+  );
+
+  static const TextStyle tabLabelInactive = TextStyle(
+    fontFamily: 'Inter',
+    fontWeight: FontWeight.w400,
+    fontSize: 14,
+  );
 }
