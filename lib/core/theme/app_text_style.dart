@@ -6,7 +6,7 @@ abstract class AppTextStyles {
     fontFamily: 'Inter',
     fontSize: 20,
     fontWeight: FontWeight.bold,
-    color: Colors.white,
+    color: AppColors.surface,
   );
 
   static const TextStyle headerSubtitle = TextStyle(
@@ -40,7 +40,7 @@ abstract class AppTextStyles {
     fontFamily: 'Inter',
     fontSize: 28,
     fontWeight: FontWeight.w900,
-    color: Colors.white,
+    color: AppColors.surface,
     height: 1.3,
   );
 

@@ -50,5 +50,10 @@
     "passwordShort": "Password is too short",
     "phoneRequired": "Phone number is required",
     "phoneInvalid": "Invalid phone number"
-  }
+  },
+  "home": {
+  "welcomeUser": "Welcome, {}",
+  "whereIsYourJourney": "Where is your medical journey?",
+  "searchHint": "Search for treatment or hospital..."
+}
 }

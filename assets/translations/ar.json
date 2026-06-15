@@ -50,5 +50,11 @@
     "passwordShort": "كلمة المرور قصيرة جداً",
     "phoneRequired": "رقم الهاتف مطلوب",
     "phoneInvalid": "رقم الهاتف غير صحيح"
-  }
+  },
+  "home": {
+  "welcomeUser": "مرحباً بك، {}",
+  "whereIsYourJourney": "إلى أين رحلتك الطبية؟",
+  "searchHint": "ابحث عن علاج أو مستشفى..."
+}
+  
 }

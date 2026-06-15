@@ -4,6 +4,7 @@ abstract class AppColors {
   static const Color primary = Color(0xFF0D7A5F);
   static const Color primaryLight = Color(0xFF4CAF82);
   static const Color primaryDark = Color(0xFF0D3A2E);
+  static const Color iconBackground = Color(0xFFE6F4F0);
 
   static const Color background = Color(0xFFF5F5F0);
   static const Color surface = Color(0xFFFFFFFF);
@@ -19,4 +20,6 @@ abstract class AppColors {
 
   static const Color error = Color(0xFFD32F2F);
   static const Color success = Color(0xFF2E7D5B);
+
+  static const Color priceGold = Color(0xFFC8A96E);
 }
