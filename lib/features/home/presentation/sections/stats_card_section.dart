@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login_screen/core/theme/app_colors.dart';
 import 'package:login_screen/core/theme/app_constants.dart';
 import '../widgets/quick_stat_card.dart';
 
@@ -14,7 +15,7 @@ class HomeStatsSection extends StatelessWidget {
           Expanded(
             child: QuickStatCard(
               icon: Icons.local_hospital_outlined,
-              value: '1,5+',
+              value: '1,5 ألف+',
               label: 'مستشفى',
             ),
           ),
@@ -24,6 +25,8 @@ class HomeStatsSection extends StatelessWidget {
               icon: Icons.public,
               value: '30',
               label: 'دولة',
+              iconBackgroundColor: AppColors.amberIconBackground,
+              iconColor: AppColors.priceGold,
             ),
           ),
           SizedBox(width: 8),

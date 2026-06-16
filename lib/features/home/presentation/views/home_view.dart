@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:login_screen/core/theme/app_colors.dart';
 import 'package:login_screen/core/theme/app_constants.dart';
 import 'package:login_screen/features/home/presentation/sections/banner_section.dart';
+import 'package:login_screen/features/home/presentation/sections/destinations_section.dart';
 import 'package:login_screen/features/home/presentation/sections/header_section.dart';
+import 'package:login_screen/features/home/presentation/sections/home_categories_section.dart';
+import 'package:login_screen/features/home/presentation/sections/specialties_section.dart';
 import 'package:login_screen/features/home/presentation/sections/stats_card_section.dart';
 
 class HomeView extends StatelessWidget {
@@ -17,11 +20,17 @@ class HomeView extends StatelessWidget {
           child: Column(
             children: [
               const HomeHeaderSection(),
-              SizedBox(height: AppConstants.spacingLarge),
+              const SizedBox(height: AppConstants.spacingLarge),
               const HomeBannerSection(),
-              SizedBox(height: AppConstants.spacingLarge),
+              const SizedBox(height: AppConstants.spacingLarge),
               const HomeStatsSection(),
-              SizedBox(height: AppConstants.spacingLarge),
+              const SizedBox(height: AppConstants.spacingLarge),
+              const HomeCategoriesSection(),
+              const SizedBox(height: AppConstants.spacingLarge),
+              const HomeSpecialtiesSection(),
+              const SizedBox(height: AppConstants.spacingLarge),
+              const HomeDestinationsSection(),
+              const SizedBox(height: AppConstants.spacingLarge),
             ],
           ),
         ),

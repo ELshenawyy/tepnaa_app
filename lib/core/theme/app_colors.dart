@@ -22,4 +22,29 @@ abstract class AppColors {
   static const Color success = Color(0xFF2E7D5B);
 
   static const Color priceGold = Color(0xFFC8A96E);
+  static const Color amberIconBackground = Color(0xFFF5EDD8);
+
+  static const Color tagBackground = Color(0xFFF0F0EC);
+// Tag icon colors
+static const Color tagPurpleIcon = Color(0xFF9575CD);
+static const Color tagPinkIcon   = Color(0xFFE57399);
+static const Color tagTealIcon   = Color(0xFF4DB6AC);
+
+// Destination badge colors (background)
+static const Color badgeBlue   = Color(0xFFDCE8F5);  
+static const Color badgeOrange = Color(0xFFFCE8D6);  
+static const Color badgePink   = Color(0xFFFADCE8);  
+static const Color badgePurple = Color(0xFFE6DCF5);  
+
+// Badge text colors
+static const Color badgeBlueText   = Color(0xFF5B8DC4);
+static const Color badgeOrangeText = Color(0xFFD4914F);
+static const Color badgePinkText   = Color(0xFFCE6D9C);
+static const Color badgePurpleText = Color(0xFF9575CD);
+
+
+static const Color vipGold       = Color(0xFFC8A96E);
+static const Color vipGoldDark   = Color(0xFFA07840);
+static const Color vipBannerDark = Color(0xFF1A0F00);
+static const Color vipBannerMid  = Color(0xFF3D2200);
 }

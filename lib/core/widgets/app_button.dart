@@ -17,6 +17,7 @@ class AppButton extends StatelessWidget {
   final IconPosition iconPosition;
   final double? width;
   final double? height;
+  final double? borderRadius;
 
   const AppButton({
     super.key,
@@ -28,18 +29,18 @@ class AppButton extends StatelessWidget {
     this.iconPosition = IconPosition.end,
     this.width = double.infinity,
     this.height,
+    this.borderRadius,
   });
 
   Color get _backgroundColor =>
-      type == AppButtonType.primary ? AppColors.primary : AppColors.surface;
+      type == AppButtonType.primary ? AppColors.primary : AppColors.background;
 
   Color get _borderColor => type == AppButtonType.primary
       ? AppColors.primary
       : AppColors.secondaryBorder;
 
-  Color get _contentColor => type == AppButtonType.primary
-      ? AppColors.surface
-      : AppColors.textPrimary;
+  Color get _contentColor =>
+      type == AppButtonType.primary ? AppColors.surface : AppColors.textPrimary;
 
   Widget _buildIcon() {
     if (svgAssetPath != null) {
@@ -72,10 +73,11 @@ class AppButton extends StatelessWidget {
         style: OutlinedButton.styleFrom(
           backgroundColor: _backgroundColor,
           side: BorderSide(color: _borderColor),
-              padding: const EdgeInsets.symmetric(horizontal: 12), 
-
+          padding: const EdgeInsets.symmetric(horizontal: 8),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(AppConstants.borderRadius),
+            borderRadius: BorderRadius.circular(
+              borderRadius ?? AppConstants.borderRadius,
+            ),
           ),
         ),
         child: Row(
