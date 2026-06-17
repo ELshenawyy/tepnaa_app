@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:login_screen/core/theme/app_colors.dart';
 import 'package:login_screen/core/theme/app_constants.dart';
 import 'package:login_screen/core/theme/app_images.dart';
-import 'package:login_screen/core/theme/app_text_style.dart';
 import 'package:login_screen/core/widgets/home_section_header.dart';
 import 'package:login_screen/features/home/presentation/widgets/midical_catigory_card.dart';
 

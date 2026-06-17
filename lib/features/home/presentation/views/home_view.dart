@@ -9,10 +9,11 @@ import 'package:login_screen/features/home/presentation/sections/hospital_sectio
 import 'package:login_screen/features/home/presentation/sections/package_section.dart';
 import 'package:login_screen/features/home/presentation/sections/specialties_section.dart';
 import 'package:login_screen/features/home/presentation/sections/stats_card_section.dart';
+import 'package:login_screen/features/home/presentation/sections/testimonials_section.dart';
 import 'package:login_screen/features/home/presentation/sections/vip_doctor_section.dart';
+import 'package:login_screen/features/home/presentation/sections/why_tebna_section.dart';
 
 import '../sections/offer_package_section.dart';
-import '../widgets/offer_package_card.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -44,6 +45,10 @@ class HomeView extends StatelessWidget {
               const HomePackagesSection(),
               const SizedBox(height: AppConstants.spacingLarge),
               const OfferPackagesSection(),
+               const SizedBox(height: AppConstants.spacingLarge),
+              const HomeTestimonialsSection(),
+              const SizedBox(height: AppConstants.spacingLarge),
+              const WhyTebnaaSection(),
               const SizedBox(height: AppConstants.spacingLarge),
             ],
           ),
