@@ -5,8 +5,14 @@ import 'package:login_screen/features/home/presentation/sections/banner_section.
 import 'package:login_screen/features/home/presentation/sections/destinations_section.dart';
 import 'package:login_screen/features/home/presentation/sections/header_section.dart';
 import 'package:login_screen/features/home/presentation/sections/home_categories_section.dart';
+import 'package:login_screen/features/home/presentation/sections/hospital_section.dart';
+import 'package:login_screen/features/home/presentation/sections/package_section.dart';
 import 'package:login_screen/features/home/presentation/sections/specialties_section.dart';
 import 'package:login_screen/features/home/presentation/sections/stats_card_section.dart';
+import 'package:login_screen/features/home/presentation/sections/vip_doctor_section.dart';
+
+import '../sections/offer_package_section.dart';
+import '../widgets/offer_package_card.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -30,6 +36,14 @@ class HomeView extends StatelessWidget {
               const HomeSpecialtiesSection(),
               const SizedBox(height: AppConstants.spacingLarge),
               const HomeDestinationsSection(),
+              const SizedBox(height: AppConstants.spacingLarge),
+              const HomeVipDoctorsSection(),
+              const SizedBox(height: AppConstants.spacingLarge),
+              const HomeHospitalsSection(),
+              const SizedBox(height: AppConstants.spacingLarge),
+              const HomePackagesSection(),
+              const SizedBox(height: AppConstants.spacingLarge),
+              const OfferPackagesSection(),
               const SizedBox(height: AppConstants.spacingLarge),
             ],
           ),

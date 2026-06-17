@@ -140,4 +140,36 @@ abstract class AppTextStyles {
     fontWeight: FontWeight.w400,
     fontSize: 14,
   );
+
+  static const TextStyle vipButton = TextStyle(
+    fontFamily: 'Inter',
+    fontSize: 11,
+    fontWeight: FontWeight.w700,
+    color: AppColors.surface,
+  );
+  static const TextStyle vipText = TextStyle(
+    fontFamily: 'Inter',
+    fontSize: 9,
+    fontWeight: FontWeight.w800,
+    color: AppColors.surface,
+  );
+
+  static const TextStyle vipBadgeLabel = TextStyle(
+    fontFamily: 'Inter',
+    fontSize: 8,
+    fontWeight: FontWeight.w700,
+    color: AppColors.extraPrimaryLight,
+  );
+  static const TextStyle vipLocationName = TextStyle(
+    fontFamily: 'Inter',
+    fontSize: 10,
+    color: Colors.white,
+    fontWeight: FontWeight.w600,
+  );
+  static const TextStyle vipDoctorLabel = TextStyle(
+    fontFamily: 'Inter',
+    fontSize: 8,
+    fontWeight: FontWeight.w700,
+    color: AppColors.vipGoldDark,
+  );
 }

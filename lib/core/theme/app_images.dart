@@ -11,4 +11,6 @@ abstract class AppImages {
   static const String medicalRehab = 'assets/images/medical_rehab.png';
   static const String surgeries = 'assets/images/surgeries.png';
   static const String aestheticBeauty = 'assets/images/aesthetic_beauty.png';
+    static const String vipBicture = 'assets/images/vip_pic.png';
+
 }

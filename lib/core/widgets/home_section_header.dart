@@ -20,13 +20,13 @@ class SectionHeader extends StatelessWidget {
       children: [
         Text(
           title,
-          style: AppTextStyles.heading.copyWith(fontSize: 18),
+          style: AppTextStyles.heading.copyWith(fontSize: 15,fontWeight: FontWeight.w900),
         ),
         GestureDetector(
           onTap: onActionTap,
           child: Text(
             actionLabel,
-            style: AppTextStyles.link.copyWith(fontSize: 13),
+            style: AppTextStyles.link.copyWith(fontSize: 12,fontWeight: FontWeight.w700),
           ),
         ),
       ],
