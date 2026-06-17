@@ -25,11 +25,8 @@ class WhyTebnaaCard extends StatelessWidget {
       child: Column(
         children: [
           banner,
-
           const SizedBox(height: 12),
-
           ...items,
-
           const SizedBox(height: 12),
         ],
       ),

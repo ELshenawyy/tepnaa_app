@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:login_screen/core/theme/app_colors.dart';
+import 'package:login_screen/core/theme/app_constants.dart';
 import 'package:login_screen/core/theme/app_images.dart';
 import 'package:login_screen/features/home/presentation/widgets/why_tebna_card.dart';
 import 'package:login_screen/features/home/presentation/widgets/why_tebna_item.dart';
-
 
 class WhyTebnaaSection extends StatelessWidget {
   const WhyTebnaaSection({super.key});
@@ -18,13 +18,13 @@ class WhyTebnaaSection extends StatelessWidget {
         child: Stack(
           alignment: Alignment.center,
           children: [
-            Image.asset(
-              AppImages.medicalRehab,
-              width: double.infinity,
-              height: 90,
-              fit: BoxFit.cover,
+            Container(
+              height: AppConstants.logoHeight,
+              decoration: BoxDecoration(
+                color: AppColors.primaryDark,
+              ),
             ),
-             Text(
+            Text(
               'لماذا طبنا؟',
               style: TextStyle(
                 color: AppColors.surface,
@@ -43,7 +43,6 @@ class WhyTebnaaSection extends StatelessWidget {
           iconColor: AppColors.primary,
           backgroundColor: Color(0xffEEF7F4),
         ),
-
         WhyTebnaaItem(
           icon: Icons.support_agent_outlined,
           title: 'دعم عربي 24/7',
@@ -51,7 +50,6 @@ class WhyTebnaaSection extends StatelessWidget {
           iconColor: Color(0xffC5A25D),
           backgroundColor: Color(0xffFBF5E8),
         ),
-
         WhyTebnaaItem(
           icon: Icons.verified_user_outlined,
           title: 'ضمان الجودة',
@@ -59,7 +57,6 @@ class WhyTebnaaSection extends StatelessWidget {
           iconColor: AppColors.primary,
           backgroundColor: Color(0xffEEF7F4),
         ),
-
         WhyTebnaaItem(
           icon: Icons.flight_takeoff_outlined,
           title: 'خدمات متكاملة',

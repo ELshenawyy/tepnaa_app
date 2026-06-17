@@ -20,12 +20,11 @@ class HomeHeaderSection extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // ── Top Row: notification + avatar + logo ──
           Row(
             children: [
               Image.asset(
                 AppImages.tibnaLogo,
-                height: 40,
+                height: AppConstants.bannerHeight,
                 fit: BoxFit.contain,
               ),
               const Spacer(),
@@ -35,8 +34,6 @@ class HomeHeaderSection extends StatelessWidget {
             ],
           ),
           const SizedBox(height: AppConstants.spacingLarge),
-
-          // ── Greeting ─────────────────────────────
           Text(
             '👋 ${TKeys.welcomeUser.tr(args: ['أحمد'])}',
             style: AppTextStyles.subheading,
@@ -48,8 +45,6 @@ class HomeHeaderSection extends StatelessWidget {
                 .copyWith(fontSize: 20, fontWeight: FontWeight.w900),
           ),
           const SizedBox(height: AppConstants.spacingLarge),
-
-          // ── Search Bar ───────────────────────────
           HomeSearchBar(),
         ],
       ),

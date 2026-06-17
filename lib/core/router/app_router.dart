@@ -5,13 +5,14 @@ import 'package:login_screen/features/auth/presentation/views/register_view.dart
 import 'package:login_screen/features/home/presentation/views/home_view.dart';
 import 'package:login_screen/features/intro/presentation/views/onboarding_view.dart';
 import 'package:login_screen/features/intro/presentation/views/language_view.dart';
+import 'package:login_screen/features/intro/presentation/views/welcome_view.dart';
 
 final appRouter = GoRouter(
   initialLocation: RouteNames.splash,
   routes: [
     GoRoute(
       path: RouteNames.splash,
-      builder: (context, state) => HomeView(),
+      builder: (context, state) => WelcomeView(),
     ),
     GoRoute(
       path: RouteNames.language,

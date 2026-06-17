@@ -13,6 +13,8 @@ abstract class AppConstants {
 
   // Sizes
   static const double fieldHeight = 50.0;
+    static const double bannerHeight = 40.0;
+
   static const double buttonHeight = 50.0;
   static const double avatarSize = 64.0;
   static const double avatarRadius = 32.0;

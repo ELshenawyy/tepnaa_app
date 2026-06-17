@@ -25,33 +25,31 @@ class TestimonialUserInfo extends StatelessWidget {
           child: image.isEmpty ? Icon(Icons.person) : null,
         ),
         const SizedBox(width: 12),
-        
-           Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                name,
-                style: AppTextStyles.label.copyWith(
-                  fontWeight: FontWeight.w700,
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              name,
+              style: AppTextStyles.label.copyWith(
+                fontWeight: FontWeight.w700,
+              ),
+            ),
+            const SizedBox(height: 4),
+            Row(
+              children: [
+                Text(
+                  flag,
+                  style: const TextStyle(fontSize: 12),
                 ),
-              ),
-              const SizedBox(height: 4),
-              Row(
-                children: [
-                  Text(
-                    flag,
-                    style: const TextStyle(fontSize: 12),
-                  ),
-                  const SizedBox(width: 4),
-                  Text(
-                    country,
-                    style: AppTextStyles.hint,
-                  ),
-                ],
-              ),
-            ],
-          ),
-        
+                const SizedBox(width: 4),
+                Text(
+                  country,
+                  style: AppTextStyles.hint,
+                ),
+              ],
+            ),
+          ],
+        ),
       ],
     );
   }
