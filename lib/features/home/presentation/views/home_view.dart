@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:login_screen/core/theme/app_colors.dart';
-import 'package:login_screen/core/theme/app_constants.dart';
 import 'package:login_screen/features/home/presentation/sections/banner_section.dart';
 import 'package:login_screen/features/home/presentation/sections/destinations_section.dart';
 import 'package:login_screen/features/home/presentation/sections/header_section.dart';
