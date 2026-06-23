@@ -43,7 +43,7 @@ class LoginHeader extends StatelessWidget {
             ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,  // وسط
+              crossAxisAlignment: CrossAxisAlignment.center,  
               children: [
                 // اللوجو في المنتصف
                 Image.asset(

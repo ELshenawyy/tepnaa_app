@@ -1,7 +1,9 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:login_screen/core/localization/translation_keys.dart';
+import 'package:login_screen/core/router/route_names.dart';
 import 'package:login_screen/core/theme/app_colors.dart';
 import 'package:login_screen/core/theme/app_constants.dart';
 import 'package:login_screen/core/theme/app_icons.dart';
@@ -173,6 +175,23 @@ class _LoginFormSectionState extends State<LoginFormSection> {
                   },
                 ),
                 const SizedBox(height: AppConstants.spacingLarge),
+
+                TextButton(
+                  onPressed: () => context.go(RouteNames.home),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(color: AppColors.primary),
+                      borderRadius: BorderRadius.circular(4),
+
+                    ),
+                    child: Text(
+                      'تخطي',
+                      style: AppTextStyles.label.copyWith(
+                        color: AppColors.primary,
+                      ),
+                    ),
+                  ),
+                ),
               ],
             ),
           ),

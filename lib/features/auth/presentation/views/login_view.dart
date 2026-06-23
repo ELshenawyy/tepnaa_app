@@ -1,8 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:login_screen/core/di/injection.dart';
 import 'package:login_screen/core/localization/translation_keys.dart';
+import 'package:login_screen/core/router/route_names.dart';
 import 'package:login_screen/core/theme/app_text_style.dart';
 import 'package:login_screen/features/auth/presentation/sections/login_form_section.dart';
 import 'package:login_screen/features/auth/presentation/sections/login_header_section.dart';
@@ -37,7 +39,7 @@ class LoginView extends StatelessWidget {
                 );
               }
               if (state is LoginSuccess) {
-                // TODO: context.go(RouteNames.home)
+  context.go(RouteNames.home);
               }
             },
             child: Column(

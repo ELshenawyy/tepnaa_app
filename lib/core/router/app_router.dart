@@ -12,7 +12,7 @@ import 'package:login_screen/features/search/presentation/views/search_view.dart
 import 'package:login_screen/features/specialties/presentation/view/speciality_view.dart';
 
 final appRouter = GoRouter(
-initialLocation: RouteNames.home,
+initialLocation: RouteNames.splash,
   routes: [
     GoRoute(
       path: RouteNames.splash,
