@@ -83,22 +83,7 @@ class _OnboardingViewState extends State<OnboardingView> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                // ── Dots ────────────────────────
-                Row(
-                  children: List.generate(_slides.length, (i) {
-                    final isActive = i == _currentIndex;
-                    return AnimatedContainer(
-                      duration: const Duration(milliseconds: 200),
-                      margin: const EdgeInsets.only(right: 6),
-                      width: isActive ? 20 : 8,
-                      height: 8,
-                      decoration: BoxDecoration(
-                        color: isActive ? AppColors.primary : Colors.white38,
-                        borderRadius: BorderRadius.circular(4),
-                      ),
-                    );
-                  }),
-                ),
+                
 
                 // ── Skip ────────────────────────
                 GestureDetector(
@@ -117,6 +102,23 @@ class _OnboardingViewState extends State<OnboardingView> {
                       style: AppTextStyles.skipButton,
                     ),
                   ),
+                ),
+
+                // ── Dots ────────────────────────
+                Row(
+                  children: List.generate(_slides.length, (i) {
+                    final isActive = i == _currentIndex;
+                    return AnimatedContainer(
+                      duration: const Duration(milliseconds: 200),
+                      margin: const EdgeInsets.only(right: 6),
+                      width: isActive ? 20 : 8,
+                      height: 8,
+                      decoration: BoxDecoration(
+                        color: isActive ? AppColors.primary : Colors.white38,
+                        borderRadius: BorderRadius.circular(4),
+                      ),
+                    );
+                  }),
                 ),
               ],
             ),

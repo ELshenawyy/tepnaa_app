@@ -9,6 +9,8 @@ abstract class AppColors {
   static const Color iconBackground = Color(0xFFE6F4F0);
 
   static const Color background = Color(0xFFF5F5F0);
+      static const Color searchIconColor = Color(0xFF6B7E78);
+
   static const Color surface = Color(0xFFFFFFFF);
 
   static const Color textPrimary = Color(0xFF1A2E28);
@@ -48,5 +50,12 @@ abstract class AppColors {
   static const Color vipGoldDark = Color(0xFFA07840);
   static const Color vipBannerDark = Color(0xFF1A0F00);
   static const Color vipBannerMid = Color(0xFF3D2200);
+
+    static const Color gradientStart = Color(0xFF1ABC9C);
+
+
+
+  
+
   
 }

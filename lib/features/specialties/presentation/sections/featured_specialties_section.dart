@@ -2,29 +2,29 @@ import 'package:flutter/material.dart';
 import 'package:login_screen/core/theme/app_constants.dart';
 import 'package:login_screen/core/theme/app_images.dart';
 import 'package:login_screen/core/widgets/home_section_header.dart';
-import 'package:login_screen/core/widgets/speciality_card.dart';
 
-class HomeCategoriesSection extends StatefulWidget {
-  const HomeCategoriesSection({super.key});
+import '../../../../core/widgets/speciality_card.dart';
 
-  @override
-  State<HomeCategoriesSection> createState() => _HomeCategoriesSectionState();
-}
-
-class _HomeCategoriesSectionState extends State<HomeCategoriesSection> {
+class FeaturedSpecialtiesSection extends StatelessWidget {
+  const FeaturedSpecialtiesSection({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: AppConstants.paddingH),
+      padding: const EdgeInsets.symmetric(
+        horizontal: AppConstants.paddingH,
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // ── Header ─────────────────────────────
-          SectionHeader(title: 'التخصصات الطبية',),
-          const SizedBox(height: AppConstants.spacing),
+          const SectionHeader(
+            title: 'تخصصات مميزة',
+          ),
 
-          // ── Grid 2x2 ───────────────────────────
+          const SizedBox(
+            height: AppConstants.spacing,
+          ),
+
           Row(
             children: [
               Expanded(
@@ -49,7 +49,9 @@ class _HomeCategoriesSectionState extends State<HomeCategoriesSection> {
               ),
             ],
           ),
+
           const SizedBox(height: 8),
+
           Row(
             children: [
               Expanded(

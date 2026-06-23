@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:login_screen/core/theme/app_colors.dart';
 import 'package:login_screen/core/theme/app_text_style.dart';
 
-class MedicalCategoryCard extends StatelessWidget {
+class SpecialityCard extends StatelessWidget {
   final String imagePath;
   final IconData icon;
   final String titleAr;
@@ -11,7 +11,7 @@ class MedicalCategoryCard extends StatelessWidget {
   final bool isHighlighted;
   final VoidCallback? onTap;
 
-  const MedicalCategoryCard({
+  const SpecialityCard({
     super.key,
     required this.imagePath,
     required this.icon,

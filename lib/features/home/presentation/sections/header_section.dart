@@ -1,6 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:login_screen/core/localization/translation_keys.dart';
+import 'package:login_screen/core/router/route_names.dart';
 import 'package:login_screen/core/theme/app_constants.dart';
 import 'package:login_screen/core/theme/app_images.dart';
 import 'package:login_screen/core/theme/app_text_style.dart';
@@ -45,7 +47,12 @@ class HomeHeaderSection extends StatelessWidget {
                 .copyWith(fontSize: 20, fontWeight: FontWeight.w900),
           ),
           const SizedBox(height: AppConstants.spacingLarge),
-          HomeSearchBar(),
+          GestureDetector(
+            onTap: () => context.go(RouteNames.search),
+            child: AbsorbPointer(
+              child: HomeSearchBar(),
+            ),
+          ),
         ],
       ),
     );

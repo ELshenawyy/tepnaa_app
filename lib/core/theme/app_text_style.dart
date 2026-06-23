@@ -172,4 +172,14 @@ abstract class AppTextStyles {
     fontWeight: FontWeight.w700,
     color: AppColors.vipGoldDark,
   );
+  static const selectedLabelStyle = TextStyle(
+    fontFamily: 'Inter',
+    fontSize: 11,
+    fontWeight: FontWeight.w600,
+  );
+  static const unSelectedLabelStyle = TextStyle(
+    fontFamily: 'Inter',
+    fontSize: 11,
+    fontWeight: FontWeight.w400,
+  );
 }

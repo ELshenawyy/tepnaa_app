@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:login_screen/core/theme/app_colors.dart';
+import 'package:login_screen/core/theme/app_constants.dart';
 import 'package:login_screen/features/home/presentation/sections/banner_section.dart';
 import 'package:login_screen/features/home/presentation/sections/destinations_section.dart';
 import 'package:login_screen/features/home/presentation/sections/header_section.dart';
@@ -24,7 +25,7 @@ class HomeView extends StatelessWidget {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
-            spacing: 24,
+            spacing: AppConstants.paddingV,
             children: [
               const HomeHeaderSection(),
               const HomeBannerSection(),
@@ -38,6 +39,7 @@ class HomeView extends StatelessWidget {
               const OfferPackagesSection(),
               const HomeTestimonialsSection(),
               const WhyTebnaaSection(),
+              const SizedBox(height: AppConstants.paddingV),
             ],
           ),
         ),

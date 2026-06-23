@@ -5,12 +5,16 @@ import 'package:login_screen/core/theme/app_text_style.dart';
 class HospitalCard extends StatelessWidget {
   final String imagePath;
   final String nameAr;
+
   final String location;
   final double rating;
   final int reviewsCount;
   final int packagesCount;
   final List<String> badges;
   final VoidCallback? onTap;
+  final bool showPrice;
+  final String? price;
+  final bool showCheckmark;
 
   const HospitalCard({
     super.key,
@@ -22,12 +26,14 @@ class HospitalCard extends StatelessWidget {
     required this.packagesCount,
     required this.badges,
     this.onTap,
+    this.showPrice = false,
+    this.price,
+    this.showCheckmark = false,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 104,
       padding: const EdgeInsets.all(15),
       decoration: BoxDecoration(
         color: AppColors.surface,
@@ -37,15 +43,36 @@ class HospitalCard extends StatelessWidget {
       child: Row(
         children: [
           // ── صورة المستشفى ─────────────────────
-          ClipRRect(
-            borderRadius: BorderRadius.circular(15),
-            child: Image.asset(
-              imagePath,
-              width: 70,
-              height: 72,
-              fit: BoxFit.cover,
+          Stack(children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(15),
+              child: Image.asset(
+                imagePath,
+                width: 72,
+                height: 72,
+                fit: BoxFit.cover,
+              ),
             ),
-          ),
+            if (showCheckmark)
+              Positioned(
+                bottom: 4,
+                right: 4,
+                child: Container(
+                  width: 20,
+                  height: 20,
+                  decoration: BoxDecoration(
+                    color: AppColors.primary,
+                    shape: BoxShape.circle,
+                    border: Border.all(color: Colors.white, width: 1),
+                  ),
+                  child: const Icon(
+                    Icons.check,
+                    color: Colors.white,
+                    size: 12,
+                  ),
+                ),
+              ),
+          ]),
           SizedBox(
             width: 8,
           ),
@@ -59,7 +86,6 @@ class HospitalCard extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    const SizedBox(),
                     Wrap(
                       spacing: 4,
                       children:
@@ -115,6 +141,16 @@ class HospitalCard extends StatelessWidget {
                     const Icon(Icons.star, color: AppColors.vipGold, size: 12),
                   ],
                 ),
+                SizedBox(height: 4),
+                if (showPrice && price != null)
+                  Text(
+                    'بدأ من $price',
+                    style: AppTextStyles.label.copyWith(
+                      color: AppColors.primary,
+                      fontWeight: FontWeight.w800,
+                      fontSize: 12,
+                    ),
+                  ),
               ],
             ),
           ),

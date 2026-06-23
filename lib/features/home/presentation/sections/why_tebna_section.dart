@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:login_screen/core/theme/app_colors.dart';
 import 'package:login_screen/core/theme/app_constants.dart';
-import 'package:login_screen/core/theme/app_images.dart';
 import 'package:login_screen/features/home/presentation/widgets/why_tebna_card.dart';
 import 'package:login_screen/features/home/presentation/widgets/why_tebna_item.dart';
 

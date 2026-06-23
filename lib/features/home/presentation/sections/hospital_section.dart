@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:login_screen/core/theme/app_constants.dart';
 import 'package:login_screen/core/theme/app_images.dart';
 import 'package:login_screen/core/widgets/home_section_header.dart';
-import '../widgets/hospital_card.dart';
+import 'package:login_screen/core/widgets/hospital_card.dart';
 
 class HomeHospitalsSection extends StatelessWidget {
   const HomeHospitalsSection({super.key});
@@ -16,7 +16,6 @@ class HomeHospitalsSection extends StatelessWidget {
         children: [
           const SectionHeader(title: 'مستشفيات مميزة'),
           const SizedBox(height: AppConstants.spacing),
-
           HospitalCard(
             imagePath: AppImages.hospital,
             nameAr: 'مركز SHA Wellness Clinic',
@@ -27,7 +26,6 @@ class HomeHospitalsSection extends StatelessWidget {
             badges: const ['ISPA', 'ISO'],
           ),
           const SizedBox(height: 12),
-
           HospitalCard(
             imagePath: AppImages.hospital,
             nameAr: 'مركز Anantara Healing',
@@ -38,7 +36,6 @@ class HomeHospitalsSection extends StatelessWidget {
             badges: const ['ISPA', 'ISO'],
           ),
           const SizedBox(height: 12),
-
           HospitalCard(
             imagePath: AppImages.hospital,
             nameAr: 'مركز Estetik International',
@@ -49,7 +46,6 @@ class HomeHospitalsSection extends StatelessWidget {
             badges: const ['ISAPS', 'JCI'],
           ),
           const SizedBox(height: 12),
-
           HospitalCard(
             imagePath: AppImages.hospital,
             nameAr: 'عيادة Bumrungrad Body',
