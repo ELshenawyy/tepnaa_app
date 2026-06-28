@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:login_screen/core/theme/app_colors.dart';
 import 'package:login_screen/core/theme/app_text_style.dart';
+import 'package:login_screen/features/home/data/model/destination_item_model.dart';
 import 'package:login_screen/features/home/presentation/widgets/explore_button.dart';
 
-enum FlagPosition { topLeft, bottomLeft }
 
 class DestinationCard extends StatelessWidget {
   final String imagePath;
@@ -15,7 +15,7 @@ class DestinationCard extends StatelessWidget {
   final Color? badgeTextColor;
   final String? description;
   final bool showButton;
-  final FlagPosition flagPosition;
+  final FlagPosition? flagPosition;
   final VoidCallback? onTap;
   final bool? showIcon;
   final double? titleFontSize;
@@ -33,7 +33,7 @@ class DestinationCard extends StatelessWidget {
     this.showButton = false,
     this.flagPosition = FlagPosition.bottomLeft,
     this.onTap,
-    this.showIcon,
+    this.showIcon = false,
     this.titleFontSize = 14,
   });
 
@@ -104,6 +104,7 @@ class DestinationCard extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Flexible(
                         child: Text(

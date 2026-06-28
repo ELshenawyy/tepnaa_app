@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:login_screen/core/theme/app_colors.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:login_screen/core/theme/app_constants.dart';
-import 'package:login_screen/core/theme/app_images.dart';
 import 'package:login_screen/core/widgets/home_section_header.dart';
+import 'package:login_screen/features/home/presentation/widgets/speciality_tag.dart';
+import '../../../../core/di/injection.dart';
+import '../../data/model/destination_item_model.dart';
+import '../cubit/distination_cubit.dart';
 import '../widgets/destination_card.dart';
 
 class HomeDestinationsSection extends StatelessWidget {
@@ -10,108 +13,129 @@ class HomeDestinationsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: AppConstants.paddingH),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const SectionHeader(title: 'الوجهات الأكثر طلباً'),
-          const SizedBox(height: AppConstants.spacing),
+    Widget buildCard(DestinationItemModel distnation) {
+      return DestinationCard(
+        imagePath: distnation.imagePath,
+        flagEmoji: distnation.flagEmoji,
+        countryName: distnation.countryName,
+        hospitalsCount: distnation.hospitalsCount,
+        badgeText: distnation.badgeText,
+        badgeColor: distnation.badgeColor,
+        badgeTextColor: distnation.badgeTextColor,
+        description: distnation.description,
+        showButton: distnation.showButton,
+        flagPosition: distnation.flagPosition,
+        titleFontSize: distnation.titleFontSize,
+        showIcon: distnation.showIcon,
+      );
+    }
 
-          SizedBox(
-            height: 180,
-            child: Row(
-              children: [
-                Expanded(
-                  flex : 3,
-                  child: DestinationCard(
-                    imagePath: AppImages.hospital,
-                    flagEmoji: '🇹🇷',
-                    countryName: 'تركيا',
-                    hospitalsCount: '312 مستشفى',
-                    badgeText: 'الأكثر طلباً',
-                    badgeColor: AppColors.primary,
-                    badgeTextColor: Colors.white,
-                    description: 'تجميل، أسنان • شعر',
-                    showButton: true,
-                    flagPosition: FlagPosition.topLeft,
-                    showIcon: true,
-                    titleFontSize: 20,
-                  ),
-                ),
-                const SizedBox(width: 8),
+    return BlocProvider(
+      create: (_) => sl<DistinationCubit>()..getSpecialties(),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: AppConstants.paddingH),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const SectionHeader(title: 'الوجهات الأكثر طلباً'),
+            const SizedBox(height: AppConstants.spacing),
+            SizedBox(
+              height: 48,
+              child: BlocBuilder<DistinationCubit, DistinationState>(
+                builder: (context, state) {
+                  if (state is DistinationLoading) {
+                    return const Center(child: CircularProgressIndicator());
+                  }
 
-                Expanded(
-                  flex: 2,
-                  child: Column(
+                  if (state is DistinationSuccess) {
+                    return SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Wrap(
+                        spacing: 8,
+                        children: state.specialties.map((specialty) {
+                          return SpecialtyTag(
+                            icon: specialty.chipIcon,
+                            label: specialty.chipLabel,
+                            iconColor: specialty.chipIconColor,
+                            isActive: specialty.key == state.selectKey,
+                            onTap: () => context
+                                .read<DistinationCubit>()
+                                .selectSpicialty(specialty.key),
+                          );
+                        }).toList(),
+                      ),
+                    );
+                  }
+                  if (state is DistinationFailure) {
+                    return Center(child: Text(state.errorMessage));
+                  }
+                  return Container();
+                },
+              ),
+            ),
+            const SizedBox(height: AppConstants.spacing),
+            BlocBuilder<DistinationCubit, DistinationState>(
+              builder: (context, state) {
+                if (state is DistinationLoading) {
+                  return Center(
+                    child: CircularProgressIndicator(),
+                  );
+                }
+                if (state is DistinationSuccess) {
+                  final selected = state.specialties
+                      .firstWhere((s) => s.key == state.selectKey);
+
+                  final destinations = selected.destinations;
+
+                  return Column(
                     children: [
-                      Expanded(
-                        child: DestinationCard(
-                          imagePath: AppImages.hospital,
-                          flagEmoji: '🇩🇪',
-                          countryName: 'ألمانيا',
-                          hospitalsCount: '198 مستشفى',
-                          badgeText: 'تقنية متقدمة',
-                          badgeColor: AppColors.badgeBlue,
-                          badgeTextColor: AppColors.badgeBlueText,
-                          titleFontSize: 13,
+                      SizedBox(
+                        height: 190,
+                        child: Row(
+                          children: [
+                            Expanded(
+                              flex: 3,
+                              child: buildCard(destinations[0]),
+                            ),
+                            const SizedBox(width: 8),
+                            Expanded(
+                              flex: 2,
+                              child: Column(
+                                children: [
+                                  Expanded(
+                                    child: buildCard(destinations[1]),
+                                  ),
+                                  const SizedBox(height: 8),
+                                  Expanded(
+                                    child: buildCard(destinations[2]),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                       const SizedBox(height: 8),
-                      Expanded(
-                        child: DestinationCard(
-                          imagePath: AppImages.hospital,
-                          flagEmoji: '🇹🇭',
-                          countryName: 'تايلاند',
-                          hospitalsCount: '134 مستشفى',
-                          badgeText: 'أسعار مميزة',
-                          badgeColor: AppColors.badgeOrange,
-                          badgeTextColor: AppColors.badgeOrangeText,
-                          titleFontSize: 13,
+                      SizedBox(
+                        height: 90,
+                        child: Row(
+                          children: [
+                            Expanded(
+                              child: buildCard(destinations[3]),
+                            ),
+                            const SizedBox(width: 8),
+                            Expanded(child: buildCard(destinations[4])),
+                          ],
                         ),
                       ),
                     ],
-                  ),
-                ),
-              ],
+                  );
+                }
+                return const SizedBox();
+              },
             ),
-          ),
-          const SizedBox(height: 8),
-
-          SizedBox(
-            height: 116,
-            child: Row(
-              children: [
-                Expanded(
-                  child: DestinationCard(
-                    imagePath: AppImages.hospital,
-                    flagEmoji: '🇮🇳',
-                    countryName: 'الهند',
-                    hospitalsCount: '245 مستشفى',
-                    badgeText: 'اقتصادي',
-                    badgeColor: AppColors.badgePurple,
-                    badgeTextColor: AppColors.badgePurpleText,
-                    flagPosition: FlagPosition.topLeft,
-                  ),
-                ),
-               
-                const SizedBox(width: 8),
-                 Expanded(
-                  child: DestinationCard(
-                    imagePath: AppImages.hospital,
-                    flagEmoji: '🇪🇸',
-                    countryName: 'إسبانيا',
-                    hospitalsCount: '112 مستشفى',
-                    badgeText: 'وجهة جديدة',
-                    badgeColor: AppColors.badgePink,
-                    badgeTextColor: AppColors.badgePinkText,
-                    flagPosition: FlagPosition.topLeft,
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

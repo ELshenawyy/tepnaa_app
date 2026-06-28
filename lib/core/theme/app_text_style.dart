@@ -5,7 +5,7 @@ abstract class AppTextStyles {
   static const TextStyle headerTitle = TextStyle(
     fontFamily: 'Inter',
     fontSize: 20,
-    fontWeight: FontWeight.bold,
+    fontWeight: FontWeight.w900,
     color: AppColors.surface,
   );
 
@@ -79,13 +79,14 @@ abstract class AppTextStyles {
     color: AppColors.textPrimary,
   );
   static final TextStyle tagline = TextStyle(
-    fontFamily: 'inter',
+    fontFamily: 'Inter',
     fontSize: 14,
     fontWeight: FontWeight.w400,
     color: AppColors.tagline,
   );
 
   static final TextStyle loading = TextStyle(
+    fontFamily: 'Inter',
     fontSize: 12,
     fontWeight: FontWeight.w400,
     color: AppColors.loading,

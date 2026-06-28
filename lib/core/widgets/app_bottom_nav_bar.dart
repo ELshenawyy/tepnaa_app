@@ -54,7 +54,7 @@ class AppBottomNavBar extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(top: 4.0),
+                      padding: const EdgeInsets.only(top: 2.0),
                       child: Container(
                         width: 24,
                         height: 3,
@@ -64,7 +64,7 @@ class AppBottomNavBar extends StatelessWidget {
                         ),
                       ),
                     ),
-                    const SizedBox(height: 4),
+                    const SizedBox(height: 2),
                     Icon(item.activeIcon),
                   ],
                 ),

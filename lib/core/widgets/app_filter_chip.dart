@@ -48,7 +48,7 @@ class AppFilterChip extends StatelessWidget {
               Icon(
                 icon!,
                 size: AppConstants.spacingSmall,
-                color: isActive ? Colors.white : AppColors.textPrimary,
+                color: isActive ? AppColors.surface : AppColors.textPrimary,
               ),
               const SizedBox(width: 4),
             ],
@@ -58,9 +58,9 @@ class AppFilterChip extends StatelessWidget {
               style: AppTextStyles.label.copyWith(
                 fontSize: 11,
                 color: isActive
-                    ? (activeLabelColor ?? Colors.white)
+                    ? (activeLabelColor ?? AppColors.surface)
                     : AppColors.textPrimary,
-                fontWeight: isActive ? FontWeight.w700 : FontWeight.w400,
+                fontWeight: FontWeight.w700,
               ),
             ),
           ],

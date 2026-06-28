@@ -5,17 +5,17 @@ import 'package:login_screen/core/theme/app_text_style.dart';
 class SpecialtyTag extends StatelessWidget {
   final IconData icon;
   final String label;
-  final Color backgroundColor;
   final Color iconColor;
   final VoidCallback? onTap;
+  final bool isActive;
 
   const SpecialtyTag({
     super.key,
     required this.icon,
     required this.label,
-    required this.backgroundColor,
     required this.iconColor,
     this.onTap,
+    required this.isActive,
   });
 
   @override
@@ -27,7 +27,8 @@ class SpecialtyTag extends StatelessWidget {
         decoration: BoxDecoration(
           color: AppColors.surface,
           borderRadius: BorderRadius.circular(24),
-          border: Border.all(color: AppColors.border),
+          border: Border.all(color:                   isActive ? AppColors.primary : AppColors.border,
+),
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
@@ -41,8 +42,11 @@ class SpecialtyTag extends StatelessWidget {
               width: 28,
               height: 28,
               decoration: BoxDecoration(
-                color: backgroundColor,
-                shape: BoxShape.circle,
+                borderRadius: BorderRadius.all(Radius.circular(12)),
+                color: AppColors.background,
+                border: Border.all(
+                  color: AppColors.border,
+                ),
               ),
               child: Icon(icon, color: iconColor, size: 14),
             ),

@@ -7,7 +7,6 @@ import 'package:login_screen/features/home/presentation/sections/header_section.
 import 'package:login_screen/features/home/presentation/sections/home_categories_section.dart';
 import 'package:login_screen/features/home/presentation/sections/hospital_section.dart';
 import 'package:login_screen/features/home/presentation/sections/package_section.dart';
-import 'package:login_screen/features/home/presentation/sections/specialties_section.dart';
 import 'package:login_screen/features/home/presentation/sections/stats_card_section.dart';
 import 'package:login_screen/features/home/presentation/sections/testimonials_section.dart';
 import 'package:login_screen/features/home/presentation/sections/vip_doctor_section.dart';
@@ -31,7 +30,6 @@ class HomeView extends StatelessWidget {
               const HomeBannerSection(),
               const HomeStatsSection(),
               const HomeCategoriesSection(),
-              const HomeSpecialtiesSection(),
               const HomeDestinationsSection(),
               const HomeVipDoctorsSection(),
               const HomeHospitalsSection(),

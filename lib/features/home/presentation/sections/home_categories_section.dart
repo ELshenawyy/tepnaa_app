@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:login_screen/core/router/route_names.dart';
 import 'package:login_screen/core/theme/app_constants.dart';
 import 'package:login_screen/core/theme/app_images.dart';
 import 'package:login_screen/core/widgets/home_section_header.dart';
@@ -12,7 +14,6 @@ class HomeCategoriesSection extends StatefulWidget {
 }
 
 class _HomeCategoriesSectionState extends State<HomeCategoriesSection> {
-
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -21,7 +22,9 @@ class _HomeCategoriesSectionState extends State<HomeCategoriesSection> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           // ── Header ─────────────────────────────
-          SectionHeader(title: 'التخصصات الطبية',),
+          SectionHeader(
+              title: 'التخصصات الطبية',
+              onActionTap: () => context.go(RouteNames.specialties)),
           const SizedBox(height: AppConstants.spacing),
 
           // ── Grid 2x2 ───────────────────────────

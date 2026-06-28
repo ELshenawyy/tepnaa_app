@@ -9,11 +9,11 @@ class BeforeAfterSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Column(
+      spacing: 20,
       children: [
+        
         BeforeAfterStatsSection(),
-        SizedBox(height: 20),
         BeforeAfterCategoriesSection(),
-        SizedBox(height: 20),
         BeforeAfterResultsSection(),
       ],
     );

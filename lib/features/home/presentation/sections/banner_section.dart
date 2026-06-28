@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:login_screen/core/theme/app_colors.dart';
 import 'package:login_screen/core/theme/app_constants.dart';
@@ -12,11 +14,36 @@ class HomeBannerSection extends StatefulWidget {
 
 class _HomeBannerSectionState extends State<HomeBannerSection> {
   final _controller = PageController();
+  Timer? _timer;
+
   int _currentIndex = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _autoScroll();
+  }
+
+  void _autoScroll() {
+    _timer = Timer.periodic(Duration(seconds: 3), (timer) {
+      if (_currentIndex < 2) {
+        _currentIndex++;
+      } else {
+        _currentIndex = 0;
+      }
+
+      _controller.animateToPage(
+        _currentIndex,
+        duration: const Duration(milliseconds: 400),
+        curve: Curves.easeInOut,
+      );
+    });
+  }
 
   @override
   void dispose() {
     _controller.dispose();
+    _timer?.cancel();
     super.dispose();
   }
 
@@ -41,7 +68,6 @@ class _HomeBannerSectionState extends State<HomeBannerSection> {
         Positioned(
           bottom: 12,
           left: 0,
-          
           right: 0,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -55,7 +81,8 @@ class _HomeBannerSectionState extends State<HomeBannerSection> {
                   width: isActive ? 20 : 6,
                   height: 6,
                   decoration: BoxDecoration(
-                    color: isActive ? AppColors.surface : AppColors.textSecondary,
+                    color:
+                        isActive ? AppColors.surface : AppColors.textSecondary,
                     borderRadius: BorderRadius.circular(4),
                   ),
                 );

@@ -7,6 +7,9 @@ import 'package:login_screen/features/specialties/cubit/specialties_cubit.dart';
 import '../../features/auth/data/datasources/auth_remote_datasource.dart';
 import '../../features/auth/domain/usecases/sign_in_usecase.dart';
 import '../../features/auth/presentation/cubit/login_cubit.dart';
+import '../../features/home/data/repositories/distinations_repo.dart';
+import '../../features/home/data/repositories/distnation_repo_impl.dart';
+import '../../features/home/presentation/cubit/distination_cubit.dart';
 import '../network/api_client.dart';
 
 final sl = GetIt.instance;
@@ -27,6 +30,10 @@ void setupDependencies() {
     () => AuthRepositoryImpl(remoteDataSource: sl()),
   );
 
+  sl.registerLazySingleton<DistinationRepository>(
+    () => DistinationRepoImpl(),
+  );
+
   // ── Use Cases ─────────────────────────────────
   sl.registerLazySingleton(() => SignInUseCase(sl()));
 
@@ -39,4 +46,6 @@ void setupDependencies() {
   sl.registerFactory(() => SearchCubit());
 
   sl.registerFactory(() => SpecialtiesCubit());
+
+  sl.registerFactory(() => DistinationCubit(sl()));
 }
